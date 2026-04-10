@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <!-- כותרת -->
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:shadowColor="#000000"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="SLOT MACHINE"
+        android:textColor="#C9A84C"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- כפתורי exit + history -->
+    <LinearLayout
+        android:id="@+id/top_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_exit_to_lobby"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/input_dark"
+            android:text="✕"
+            android:textColor="#FF4444"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:elevation="0dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_history"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_gold"
+            android:text="H"
+            android:textColor="#0D0D0D"
+            android:textStyle="bold"
+            android:stateListAnimator="@null"
+            android:elevation="0dp" />
+
+    </LinearLayout>
+
+    <!-- יתרה -->
+    <TextView
+        android:id="@+id/txt_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Balance: $0"
+        android:textColor="#C9A84C"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+    <!-- שדה הימור -->
+    <EditText
+        android:id="@+id/edit_bet_amount"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/input_dark"
+        android:gravity="center"
+        android:hint="Enter Bet"
+        android:inputType="number"
+        android:textColor="#F0F0F0"
+        android:textColorHint="#555555"
+        android:padding="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_balance" />
+
+    <!-- מכונת סלוטס -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/machine_frame_layout"
+        android:layout_width="340dp"
+        android:layout_height="280dp"
+        android:background="@drawable/img_machine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_bet_amount"
+        app:layout_constraintVertical_bias="0.3">
+
+        <LinearLayout
+            android:id="@+id/layout_reels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.474">
+
+            <ImageView
+                android:id="@+id/img_slot1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_cherry" />
+
+            <ImageView
+                android:id="@+id/img_slot2"
+                android:layout_width="105dp"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_diamond" />
+
+            <ImageView
+                android:id="@+id/img_slot3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/img_seven" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ידית -->
+    <LinearLayout
+        android:id="@+id/layout_handle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-15dp"
+        android:layout_marginTop="55dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@+id/machine_frame_layout"
+        app:layout_constraintTop_toTopOf="@+id/machine_frame_layout">
+
+        <View
+            android:id="@+id/handle_head"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="@drawable/handle_ball" />
+
+        <View
+            android:id="@+id/handle_rod"
+            android:layout_width="11dp"
+            android:layout_height="90dp"
+            android:background="@drawable/handle_rod" />
+
+    </LinearLayout>
+
+    <!-- כפתור ספין -->
+    <Button
+        android:id="@+id/btn_spin"
+        android:layout_width="230dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_gold"
+        android:elevation="0dp"
+        android:text="PULL TO SPIN!"
+        android:textColor="#0D0D0D"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.08"
+        android:stateListAnimator="@null"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/machine_frame_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

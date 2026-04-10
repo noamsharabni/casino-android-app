@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/login_background"
+    android:padding="16dp">
+
+    <!-- כותרת -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GAME HISTORY"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#C9A84C"
+        android:letterSpacing="0.15"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp" />
+
+    <!-- רשימה -->
+    <ListView
+        android:id="@+id/history_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#C9A84C"
+        android:dividerHeight="1dp" />
+
+    <!-- כפתור חזרה -->
+    <Button
+        android:id="@+id/btn_back_to_game"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:text="BACK TO GAME"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:letterSpacing="0.1"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_gold"
+        android:textColor="#0D0D0D"
+        android:stateListAnimator="@null"
+        android:elevation="0dp" />
+
+</LinearLayout>

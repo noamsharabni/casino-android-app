@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+
+    <!-- רקע עם גרדיאנט ירוק כהה -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background" />
+
+    <!-- עיגול דקורטיבי עליון -->
+    <View
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-120dp"
+        android:background="@drawable/circle_glow" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingLeft="28dp"
+        android:paddingRight="28dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="40dp">
+
+        <!-- אייקון קלפים -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="♠ ♥"
+            android:textSize="36sp"
+            android:textColor="#C9A84C"
+            android:layout_marginBottom="8dp"
+            android:letterSpacing="0.2" />
+
+        <!-- כותרת ראשית -->
+        <TextView
+            android:id="@+id/txt_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ROYAL TABLE"
+            android:textColor="#C9A84C"
+            android:textStyle="bold"
+            android:textSize="34sp"
+            android:letterSpacing="0.15"
+            android:layout_marginBottom="4dp" />
+
+        <!-- כתובית -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in to continue playing"
+            android:textColor="#888888"
+            android:textSize="14sp"
+            android:layout_marginBottom="40dp" />
+
+        <!-- כרטיס טופס -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/card_form_bg"
+            android:padding="24dp">
+
+            <!-- שדה משתמש -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="USERNAME"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/edt_username_login"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="Enter your username"
+                android:textColor="#F0F0F0"
+                android:textColorHint="#555555"
+                android:background="@drawable/input_dark"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- שדה סיסמה -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PASSWORD"
+                android:textColor="#C9A84C"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="6dp" />
+
+            <EditText
+                android:id="@+id/edt_password_login"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:hint="Enter your password"
+                android:inputType="textPassword"
+                android:textColor="#F0F0F0"
+                android:textColorHint="#555555"
+                android:background="@drawable/input_dark"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:textSize="15sp"
+                android:layout_marginBottom="28dp" />
+
+            <!-- כפתור התחברות -->
+            <Button
+                android:id="@+id/btn_login_submit"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="SIGN IN"
+                android:textColor="#0D0D0D"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:letterSpacing="0.12"
+                android:background="@drawable/btn_gold" />
+
+        </LinearLayout>
+
+        <!-- קו מפריד -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="4dp">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#2A2A2A" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="  NEW PLAYER?  "
+                android:textColor="#555555"
+                android:textSize="11sp"
+                android:letterSpacing="0.1" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="#2A2A2A" />
+
+        </LinearLayout>
+
+        <!-- כפתור הרשמה -->
+        <Button
+            android:id="@+id/btn_go_to_register"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:text="CREATE ACCOUNT"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.08"
+            android:background="@drawable/btn_gold"
+            android:layout_marginTop="12dp"
+            android:stateListAnimator="@null"
+            android:elevation="0dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

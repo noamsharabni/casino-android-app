@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="115dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:gravity="center_horizontal">
+
+            <!-- תוצאה -->
+            <TextView
+                android:id="@+id/tvResultNumber"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/card_form_bg"
+                android:gravity="center"
+                android:text="\?"
+                android:textColor="#C9A84C"
+                android:textSize="55sp"
+                android:textStyle="bold" />
+
+            <!-- שדה הימור -->
+            <EditText
+                android:id="@+id/etBetAmount"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Bet Amount"
+                android:inputType="number"
+                android:textColor="#F0F0F0"
+                android:textColorHint="#555555"
+                android:background="@drawable/input_dark"
+                android:gravity="center"
+                android:padding="10dp" />
+
+            <!-- כפתורי אדום/שחור -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnBetRed"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="RED (x2)"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:backgroundTint="#CC2222"
+                    android:layout_marginEnd="4dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+                <Button
+                    android:id="@+id/btnBetBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:text="BLACK (x2)"
+                    android:textColor="#C9A84C"
+                    android:textStyle="bold"
+                    android:backgroundTint="#1A1A1A"
+                    android:layout_marginStart="4dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+            </LinearLayout>
+
+            <!-- לוח מספרים -->
+            <GridLayout
+                android:id="@+id/glNumberBoard"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:columnCount="5"
+                android:alignmentMode="alignBounds">
+
+                <!-- 0 -->
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_columnSpan="5"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1.1"
+                    android:text="0"
+                    android:textColor="#0D0D0D"
+                    android:textStyle="bold"
+                    android:backgroundTint="#C9A84C"
+                    android:textSize="18sp"
+                    android:insetTop="2dp"
+                    android:insetBottom="2dp"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+                <!-- 1-5 -->
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="1" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="2" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="3" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="4" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="5" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+
+                <!-- 6-10 -->
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="6" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="7" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="8" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="9" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="10" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+
+                <!-- 11-15 -->
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="11" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="12" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="13" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="14" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="15" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+
+                <!-- 16-20 -->
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="16" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="17" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="18" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="19" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="20" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+
+                <!-- 21-25 -->
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="21" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="22" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="23" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="24" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="25" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+
+                <!-- 26-30 -->
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="26" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="27" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="28" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="29" android:textColor="#FFFFFF" android:textStyle="bold" android:backgroundTint="#CC2222" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+                <Button android:layout_width="0dp" android:layout_height="0dp" android:layout_columnWeight="1" android:layout_rowWeight="1" android:text="30" android:textColor="#C9A84C" android:textStyle="bold" android:backgroundTint="#1A1A1A" android:insetLeft="1dp" android:insetRight="1dp" android:padding="0dp" android:stateListAnimator="@null" android:elevation="0dp"/>
+
+            </GridLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/card_form_bg"
+        app:elevation="0dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingEnd="16dp">
+
+            <Button
+                android:id="@+id/btn_exit_to_lobby"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/input_dark"
+                android:padding="0dp"
+                android:text="✕"
+                android:textColor="#FF4444"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:elevation="0dp" />
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Balance: $1000"
+                android:textColor="#C9A84C"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</FrameLayout>

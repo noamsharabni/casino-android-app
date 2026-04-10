@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="110dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <!-- כותרת -->
+            <TextView
+                android:id="@+id/txt_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="BLACKJACK"
+                android:textColor="#C9A84C"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.15" />
+
+            <!-- יד דילר -->
+            <LinearLayout
+                android:id="@+id/dealer_hand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+            <!-- יד שחקן -->
+            <LinearLayout
+                android:id="@+id/player_hand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dealer_hand"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+            <!-- סטטוס -->
+            <TextView
+                android:id="@+id/txt_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/player_hand"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:text="Press PLAY to start"
+                android:textColor="#F0F0F0"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- תוצאה -->
+            <TextView
+                android:id="@+id/txt_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_status"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textColor="#C9A84C"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <!-- AI Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_ai_message"
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btn_ai_assistant"
+                android:layout_alignStart="@id/btn_ai_assistant"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="#161616"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <TextView
+                    android:id="@+id/txt_ai_recommendation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="בודק קלפים..."
+                    android:textColor="#C9A84C"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- AI FAB -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btn_ai_assistant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/button_panel"
+                android:layout_alignStart="@id/button_panel"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="15dp"
+                android:src="@android:drawable/ic_menu_help"
+                app:backgroundTint="#C9A84C"
+                app:fabSize="mini"
+                app:tint="#0D0D0D" />
+
+            <!-- כפתורי משחק -->
+            <LinearLayout
+                android:id="@+id/button_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_stand"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_stand_bg"
+                    android:text="STAND"
+                    android:textColor="#0D0D0D"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+                <Button
+                    android:id="@+id/btn_play"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_play_bg"
+                    android:text="PLAY"
+                    android:textColor="#0D0D0D"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+                <Button
+                    android:id="@+id/btn_hit"
+                    android:layout_width="85dp"
+                    android:layout_height="85dp"
+                    android:background="@drawable/btn_hit_bg"
+                    android:text="HIT"
+                    android:textColor="#0D0D0D"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:stateListAnimator="@null"
+                    android:elevation="0dp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/card_form_bg"
+        app:elevation="0dp"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingEnd="16dp">
+
+            <!-- כפתור יציאה -->
+            <Button
+                android:id="@+id/btn_exit_to_lobby"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/input_dark"
+                android:padding="0dp"
+                android:text="✕"
+                android:textColor="#FF4444"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:stateListAnimator="@null"
+                android:elevation="0dp" />
+
+            <!-- יתרה + הימור -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txt_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Balance: $1000"
+                    android:textColor="#C9A84C"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/edt_bet"
+                    android:layout_width="85dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/input_dark"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:text="10"
+                    android:textColor="#F0F0F0"
+                    android:textSize="16sp"
+                    android:padding="8dp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</FrameLayout>
